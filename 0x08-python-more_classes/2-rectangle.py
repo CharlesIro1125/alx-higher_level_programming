@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
 """ Defines a Rectangle."""
+
 
 class Rectangle:
 
@@ -15,16 +15,11 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        try:
-            if not isinstance(value, int):
-                raise(TypeError)
-            elif value < 0:
-                raise(ValueError)
-            self.__width = value
-        except (TypeError):
-            print("width must be an integer")
-        except (ValueError):
-            print("width must be >= 0")
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        elif value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
 
     @property
     def height(self):
@@ -32,20 +27,13 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        try:
-            if not isinstance(value, int):
-                raise(TypeError)
-            elif value < 0:
-                raise(ValueError)
-            self.__height = value
-        except (TypeError):
-            print("height must be an integer")
-        except (ValueError):
-            print("height must be >= 0")
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
     
     def area(self):
         return self.__width * self.__height
     def perimeter(self):
         return ((self.__width)*2) + ((self.__height)*2)
-
-
