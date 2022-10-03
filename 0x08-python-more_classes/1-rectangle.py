@@ -11,6 +11,7 @@ class Rectangle:
 
     @property
     def width(self):
+        """getting the private var"""
         return self.__width
 
     @width.setter
@@ -23,6 +24,7 @@ class Rectangle:
 
     @property
     def height(self):
+        """getting the private var"""
         return self.__height
 
     @height.setter
