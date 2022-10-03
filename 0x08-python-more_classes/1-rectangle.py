@@ -1,6 +1,7 @@
 #!/usr/bin/paython3
 """Defining a Rectangle class."""
 
+
 class Rectangle:
     """represent a rectangle"""
 
