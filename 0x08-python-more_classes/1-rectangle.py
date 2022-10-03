@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-
-""" Defines a Rectangle."""
-
 class Rectangle:
-
     """represent a rectangle"""
-    def __init__(self, width = 0, height = 0):
+    def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
 
@@ -42,7 +38,3 @@ class Rectangle:
             print("height must be an integer")
         except (ValueError):
             print("height must be >= 0")
-
-            
-
-
