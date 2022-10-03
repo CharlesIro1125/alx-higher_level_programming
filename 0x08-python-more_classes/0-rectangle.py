@@ -4,4 +4,4 @@
 
 class Rectangle:
     """represent a rectangle"""
-        pass
+    pass
