@@ -6,13 +6,13 @@ from models.base import Base
 class Rectangle(Base):
     "define some attributes and Getter/Setter"
 
-    def __init__(self,width, height, x=0, y=0, id=None):
+    def __init__(self, width, height, x=0, y=0, id=None):
         "initializing the attributes required"
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -20,6 +20,8 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        " Getter / Setter method for the property"
+
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -32,6 +34,8 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        " Getter / Setter method for the property"
+
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value <= 0:
@@ -44,6 +48,8 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        " Getter / Setter method for the property"
+
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -56,6 +62,8 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        " Getter / Setter method for the property"
+
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         elif value < 0:
