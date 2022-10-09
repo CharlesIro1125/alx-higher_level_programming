@@ -69,3 +69,54 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        return (self.__width * self.__height)
+
+    def display(self):
+        for j in range(self.__y):
+            print("")
+        if (self.__width == 0) or (self.__height == 0):
+            print(" " * self.__x, end='')
+            return ""
+        for i in range(self.__height):
+            if i == (self.__height - 1):
+                print(" " * self.__x, end='')
+                print('#' * self.__width, end='')
+                return ""
+            print(" " * self.__x, end='')
+            print('#' * self.__width)
+
+    def __str__(self):
+        return "[Rectangle] ({0}) {1}/{2} - {3}/{4}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+    @classmethod
+    def rebase(cls, *args):
+        cls(*args)
+
+    def update(self, *args, **kwargs):
+        "Update method for the instance"
+        if args and len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                elif i == 1:
+                    self.width = args[i]
+                elif i == 2:
+                    self.height = args[i]
+                elif i == 3:
+                    self.x = args[i]
+                elif i == 4:
+                    self.y = args[i]
+        elif kwargs and len(kwargs) != 0:
+            for i , j in kwargs.items():
+                if i == 'id':
+                    self.id = j
+                elif i == 'width':
+                    self.width = j
+                elif i == 'height':
+                    self.height = j
+                elif i == 'x':
+                    self.x = j
+                elif i == 'y':
+                    self.y = j
