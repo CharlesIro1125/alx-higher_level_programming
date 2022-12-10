@@ -12,12 +12,12 @@ if __name__ == "__main__":
                            passwd=argv[2], db=argv[3], charset="utf8")
     cur = conn.cursor()
     cur.execute("SELECT c.name FROM states s JOIN cities c \
-                ON s.id=c.state_id WHERE s.name LIKE %s ORDER \
+                ON s.id=c.state_id WHERE s.name IN (%s) ORDER \
                 BY c.id ASC", (argv[4],))
     query_rows = cur.fetchall()
     ls = []
     for row in query_rows:
         ls.append(*row)
-    print(",".join(ls))
+    print(", ".join(ls))
     cur.close()
     conn.close()
