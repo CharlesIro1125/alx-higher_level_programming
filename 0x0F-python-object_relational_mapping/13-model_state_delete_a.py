@@ -14,6 +14,6 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
 
-    result = session.query(State).filter(State.name.regexp_match("a")) \
-                           .delete(synchronize_session=False)
+    result = session.query(State).filter(State.name.regexp_match("a"))
+    result.delete(synchronize_session=False)
     session.commit()

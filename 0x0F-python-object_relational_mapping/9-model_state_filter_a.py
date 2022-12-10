@@ -14,8 +14,8 @@ if __name__ == "__main__":
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-
-    result = session.query(State.id,State.name).filter(State.name.regexp_match("a"))
+    result = session.query(State.id, State.name)\
+                    .filter(State.name.regexp_match("a"))
     if result.count() == 0:
         print('Nothing')
     else:

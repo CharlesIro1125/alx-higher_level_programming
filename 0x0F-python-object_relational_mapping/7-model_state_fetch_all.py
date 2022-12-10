@@ -14,7 +14,6 @@ if __name__ == "__main__":
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-
-    query_result = session.query(State.id,State.name).order_by(State.id)
+    query_result = session.query(State.id, State.name).order_by(State.id)
     for row in query_result.all():
-        print("{}: {}".format(row[0],row[1]))
+        print("{}: {}".format(row[0], row[1]))
