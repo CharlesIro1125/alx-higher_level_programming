@@ -18,5 +18,6 @@ if __name__ == "__main__":
     ls = []
     for row in query_rows:
         ls.append(*row)
+    print(",".join(ls))
     cur.close()
     conn.close()
